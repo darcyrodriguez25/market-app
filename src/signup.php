@@ -9,8 +9,22 @@
     $e_mail = $_POST ['email'];
     $p_wd = $_POST ['passwd'];
     $enc_pass = password_hash($p_wd, PASSWORD_DEFAULT);
-
-    //step 3. create query to insert into 
+     
+    $check_email = "
+    SELECT
+        email
+    FROM
+        users u
+    WHERE
+        email = '$e_mail' or ide_number = '$id_number'
+    LIMIT 1
+        ";
+         $res_check =pg_query($conn, $check_email);
+         if(pg_num_rows($res_check) > 0){
+         echo "<script>alert('User already exists !!')</script>";+
+         header('refresh:0;url=signin.html');
+        } else {
+          //step 3. create query to insert into 
     $query = "
     INSERT INTO users (
     firstname,
@@ -35,8 +49,17 @@
 
     //step 5. validate result
     if($res){
-        echo"User been created successfully !!!";
+       // echo"User been created successfully !!!";
+    echo "<script>alert('success !!! Go to login')</script>";+
+    header('refresh:0;url=signin.html');
     }else{
         echo "something wrong!";
     }
-?>
+        }
+
+?>  
+
+        
+
+
+    
