@@ -8,7 +8,8 @@
     $id_number = $_POST ['idnumber'];
     $e_mail = $_POST ['email'];
     $p_wd = $_POST ['password'];
-    $enc_pass = password_hash($p_wd, PASSWORD_DEFAULT);
+    //$enc_pass = password_hash($p_wd, PASSWORD_DEFAULT);
+    $enc_pass = md5($p_wd);
      
     $check_email = "
     SELECT
