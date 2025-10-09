@@ -23,7 +23,7 @@ where
     
    ";
     //step 4. execute query 
-   $res_check =pg_query($sql_check_user);
+   $res_check =pg_query($conn_supa,$sql_check_user);
    if(pg_num_rows($res_check) > 0){
          //echo "User exists. Go to main page!!!";
     header('refresh:0;url=main.php');
