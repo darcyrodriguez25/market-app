@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+</head>
+<body>
+    <h2 align="center">Register Country</h2>
+
+    <form action="countries.php" method="POST"> method="POST">
+        <table border="1" align="center" cellpadding="5">
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" name="name" id="name" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="abbrev">Abbrev:</label></td>
+                <td><input type="text" name="abbrev" id="abbrev" maxlength="3" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="code">Code:</label></td>
+                <td><input type="text" name="code" id="code" maxlength="10" required></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Create">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br><br>
+
+    <h3 align="center">Registered Countries</h3>
+    <table border="1" align="center" cellpadding="5">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Abbrev</th>
+            <th>Code</th>
+            <th>Options</th>
+        </tr>
+
+    
+    </table>
+</body>
+</html>
+</html>
